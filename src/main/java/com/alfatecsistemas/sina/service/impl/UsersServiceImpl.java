@@ -1,5 +1,6 @@
 package com.alfatecsistemas.sina.service.impl;
 
+import com.alfatecsistemas.sina.domain.OrmaProfessionals;
 import com.alfatecsistemas.sina.domain.SecuUsers;
 import com.alfatecsistemas.sina.repository.UsersRepository;
 import com.alfatecsistemas.sina.service.UsersService;
@@ -65,5 +66,10 @@ public class UsersServiceImpl implements UsersService {
         }
 
         return user;
+    }
+
+    @Override
+    public SecuUsers getProfessionalById(Integer profId, Integer userId) {
+        return usersRepository.getProfessionalByProfId(profId, userId);
     }
 }

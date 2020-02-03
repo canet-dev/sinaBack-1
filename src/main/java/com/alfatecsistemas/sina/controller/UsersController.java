@@ -1,5 +1,6 @@
 package com.alfatecsistemas.sina.controller;
 
+import com.alfatecsistemas.sina.domain.OrmaProfessionals;
 import com.alfatecsistemas.sina.domain.SecuUsers;
 import com.alfatecsistemas.sina.dto.UserDto;
 import com.alfatecsistemas.sina.service.UsersService;
@@ -30,6 +31,16 @@ public class UsersController {
     @RequestMapping(path = "/{userId}", method = RequestMethod.GET)
     public SecuUsers getUser(@PathVariable Integer userId) {
         return usersService.getUser(userId);
+    }
+
+   // @RequestMapping(path = "/{userId}/professionals/{profId}", method = RequestMethod.GET)
+   // public SecuUsers getUserByProfId(@PathVariable Integer profId) {
+    //    return usersService.getUser(profId);}
+
+
+    @RequestMapping(path = "/{userId}/professionals/{profId}", method = RequestMethod.GET)
+    public SecuUsers getProfessionalByProfId(@PathVariable Integer profId, Integer userId) {
+        return usersService.getProfessionalById(profId, userId);
     }
 
     @RequestMapping(path = "/login", method = RequestMethod.GET)
@@ -78,5 +89,8 @@ public class UsersController {
         }
 
         return response;
+
+
+
     }
 }

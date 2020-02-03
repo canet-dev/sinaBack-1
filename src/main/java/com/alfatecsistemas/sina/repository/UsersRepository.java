@@ -1,5 +1,6 @@
 package com.alfatecsistemas.sina.repository;
 
+import com.alfatecsistemas.sina.domain.OrmaProfessionals;
 import com.alfatecsistemas.sina.domain.SecuUsers;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -20,5 +21,9 @@ public interface UsersRepository extends JpaRepository<SecuUsers, Integer> {
     @Query("select su from SecuUsers su " +
             "where su.userLogin = :userLogin and su.userPassword = :userPassword")
     SecuUsers getLogin(@Param("userLogin") String userLogin, @Param("userPassword") String userPassword);
+
+    @Query("select op from SecuUsers su inner join OrmaProfessionals op on op.profId=su.userId " )
+   SecuUsers getProfessionalByProfId(@Param("userId") Integer userId, @Param("profId") Integer profId);
+
 
 }

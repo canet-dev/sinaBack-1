@@ -1,5 +1,6 @@
 package com.alfatecsistemas.sina.service;
 
+import com.alfatecsistemas.sina.domain.OrmaProfessionals;
 import com.alfatecsistemas.sina.domain.SecuUsers;
 import javassist.NotFoundException;
 
@@ -11,6 +12,10 @@ public interface UsersService {
 
     SecuUsers getUser(Integer userId);
 
+    SecuUsers getUserByProfId(Integer profId);
+
+
+
     SecuUsers getLogin(String name, String password);
 
     SecuUsers updateUser(Integer userId, String name, String password) throws NotFoundException;
@@ -18,4 +23,6 @@ public interface UsersService {
     SecuUsers insertUser(Integer userId, String name, String password) throws Exception;
 
     SecuUsers deleteUser(Integer userId) throws NotFoundException;
+
+    SecuUsers getProfessionalById(Integer profId, Integer userId);
 }

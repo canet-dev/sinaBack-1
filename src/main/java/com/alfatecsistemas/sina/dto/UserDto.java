@@ -6,7 +6,7 @@ public class UserDto {
 
     private String password;
 
-    private Integer professionalId;
+    private Integer profId;
 
     public String getName() {
         return name;
@@ -25,10 +25,10 @@ public class UserDto {
     }
 
     public Integer getProfessionalId() {
-        return professionalId;
+        return profId;
     }
 
     public void setProfessionalId(Integer professionalId) {
-        this.professionalId = professionalId;
+        this.profId = professionalId;
     }
 }
