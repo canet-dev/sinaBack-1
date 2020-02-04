@@ -18,6 +18,8 @@ public interface UsersService {
 
     SecuUsers getLogin(String name, String password);
 
+    SecuUsers getUserAndProfessional(Integer userId, Integer profId);
+
     SecuUsers updateUser(Integer userId, String name, String password) throws NotFoundException;
 
     SecuUsers insertUser(Integer userId, String name, String password) throws Exception;
