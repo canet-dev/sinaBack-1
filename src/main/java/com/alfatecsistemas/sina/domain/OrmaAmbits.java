@@ -25,10 +25,7 @@ public class OrmaAmbits {
 
     @Column(name="AMBI_DELETED_DATE")
     private LocalDateTime ambiDeletedDate;
-
-    public Integer getAmbifId() {
-        return ambiId;
-    }
+    
 
     public Integer getAmbiId() {
         return ambiId;
