@@ -33,15 +33,7 @@ public class UsersController {
         return usersService.getUser(userId);
     }
 
-   // @RequestMapping(path = "/{userId}/professionals/{profId}", method = RequestMethod.GET)
-   // public SecuUsers getUserByProfId(@PathVariable Integer profId) {
-    //    return usersService.getUser(profId);}
-
-
-    @RequestMapping(path = "/{userId}/professionals/{profId}", method = RequestMethod.GET)
-    public SecuUsers getProfessionalByProfId(@PathVariable Integer profId, Integer userId) {
-        return usersService.getProfessionalById(profId, userId);
-    }
+  
 
     @RequestMapping(path = "/login", method = RequestMethod.GET)
     public SecuUsers getLogin(@RequestBody UserDto user) {

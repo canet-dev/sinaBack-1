@@ -21,7 +21,7 @@ public class SecuUsers implements Serializable {
     @Column(name="USER_PASSWORD")
     private String userPassword;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PROF_ID", referencedColumnName="PROF_ID", insertable = false, updatable = false)
     private OrmaProfessionals ormaProfessionals;
 
@@ -64,10 +64,6 @@ public class SecuUsers implements Serializable {
     public void setOrmaProfessionals(OrmaProfessionals ormaProfessionals) {
         this.ormaProfessionals = ormaProfessionals;
     }
-    public SecuUsers getProfessional(Integer userId, Integer profId) {
-        SecuUsers user =usersRepository.getProfessionalByProfId(userId, profId);
-        user.getOrmaProfessionals();
-        return user;
-    }
+
 
 }
